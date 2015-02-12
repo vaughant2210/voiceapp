@@ -1,0 +1,84 @@
+<html>
+<head>
+  <link rel="stylesheet" href="microphone/microphone.min.css">
+</head>
+<body style="text-align: center;">
+  <center><div id="microphone"></div></center>
+  <pre id="result"></pre>
+  <div id="info"></div>
+  <div id="error"></div>
+  <script src="microphone/microphone.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+
+  <script>
+
+
+  var mic = new Wit.Microphone(document.getElementById("microphone"));
+  var info = function (msg) {
+    document.getElementById("info").innerHTML = msg;
+  };
+  var error = function (msg) {
+    document.getElementById("error").innerHTML = msg;
+  };
+  mic.onready = function () {
+    info("Microphone is ready to record");
+  };
+  mic.onaudiostart = function () {
+    info("Recording started");
+    error("");
+  };
+  mic.onaudioend = function () {
+    info("Recording stopped, processing started");
+  };
+  mic.onresult = function (intent, entities) {
+    if(intent){
+      	$.get(calls[intent], function(data){
+      		var searchItems = [];
+      		for(var k in data.hits){
+      			var item = data.hits[k]; 
+      			searchItems.push({
+      				name : item.fields.item_name,
+      				calories : item.fields.nf_calories,
+      				fat : item.fields.nf_total_fat
+      			});
+      		}   
+      		console.log(searchItems);  
+      	});
+    }
+  };
+  mic.onerror = function (err) {
+    error("Error: " + err);
+  };
+  mic.onconnecting = function () {
+    info("Microphone is connecting");
+  };
+  mic.ondisconnected = function () {
+    info("Microphone is not connected");
+  };
+
+  mic.connect("IMVKXH6QC47T6MB2D7FWRRADEDVXHKE5");
+  // mic.start();
+  // mic.stop();
+
+  function kv (k, v) {
+    if (toString.call(v) !== "[object String]") {
+      v = JSON.stringify(v);
+    }
+    return k + "=" + v + "\n";
+  }
+
+
+  var calls = {
+    coffee : "https://api.nutritionix.com/v1_1/search/starbucks?results=0:50&fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=582289da&appKey=54fff1e7962d0280cb80bdc06964af53"
+  };
+
+	
+
+
+  
+
+</script>
+
+
+</body>
+</html>
