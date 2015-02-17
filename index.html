@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="microphone/microphone.min.css">
@@ -35,14 +36,14 @@
       	$.get(calls[intent], function(data){
       		var searchItems = [];
       		for(var k in data.hits){
-      			var item = data.hits[k]; 
+      			var item = data.hits[k];
       			searchItems.push({
       				name : item.fields.item_name,
       				calories : item.fields.nf_calories,
       				fat : item.fields.nf_total_fat
       			});
-      		}   
-      		console.log(searchItems);  
+      		}
+      		console.log(searchItems);
       	});
     }
   };
@@ -72,10 +73,10 @@
     coffee : "https://api.nutritionix.com/v1_1/search/starbucks?results=0:50&fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat&appId=582289da&appKey=54fff1e7962d0280cb80bdc06964af53"
   };
 
-	
 
 
-  
+
+
 
 </script>
 

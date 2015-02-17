@@ -1,0 +1,28 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+img {
+  width: 25%; }
+
+.mainlogo {
+  border-bottom: 1px solid grey;
+  max-width: 100%; }
+
+p {
+  max-width: 500px;
+  margin-top: 0 auto;
+  text-align: left; }
+
+/*# sourceMappingURL=main.css.map */

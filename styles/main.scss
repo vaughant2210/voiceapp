@@ -1,0 +1,31 @@
+@import 'bourbon/bourbon';
+$visual-grid: false;
+@import 'neat/neat';
+
+
+//CLEAR BORDER PROPERTIES
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+
+  width: 25%;
+}
+
+.mainlogo {
+  border-bottom: 1px solid grey;
+  max-width: 100%
+
+
+}
+
+p {
+  max-width: 500px;
+  margin-top: 0 auto;
+  text-align: left;
+
+}
