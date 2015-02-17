@@ -8,21 +8,21 @@
 </head>
 <body>
 
-  <div class="mainlogo">
-    <img src="http://media.coindesk.com/2014/08/starbucks_logo.png" alt="MD Logo" />
-  </div>
-  <div class="headcontainer">
-  <p>Welcome to Starbucks, hope you're having a good day :)</p>
-  <p> Would you like a cup of coffee or a pastry?</p>
+<!--   <div class="mainlogo">
+  <img src="http://media.coindesk.com/2014/08/starbucks_logo.png" alt="MD Logo" />
+</div>
+<div class="headcontainer">
+<p>Welcome to Starbucks, hope you're having a good day :)</p>
+<p> Would you like a cup of coffee or a pastry?</p>
 
-  <form id="new-search">
-      <input id="searchterm" name="searchterm" type="text"/>
-      <button> Submit </button>
+<form id="new-search">
+    <input id="searchterm" name="searchterm" type="text"/>
+    <button> Submit </button>
 
-  </form>
-
-
-
+</form> -->
+<ul>
+<li></li>
+</ul>
   <!-- MICROPHONE -->
 
   <!-- <div style="text-align: center;">
@@ -32,15 +32,17 @@
   <div id="error"></div>
   </div> -->
 
-  </div>
+  <!-- </div> -->
 
 <!--Template-->
 
-<script type ="text/template" id="results-template">
+<!-- <script type ="text/template" id="results-template">
   <span class="term"><%= term %>:</span>
+</script> -->
+
+<script type="text/template" id="item-container">
+    <li><%= value %></li>
 </script>
-
-
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
