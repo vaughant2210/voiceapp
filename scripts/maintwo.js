@@ -26,17 +26,23 @@ wines.each(function (model){
 });
 
 
+
+
+
+
+
+
 ListView = Backbone.View.extend ({
 
   tagName: 'ul',
+  template: _.template( $('#item-container').text()),
+
   initialize: function() {
-    this.template = _.template( $('#item-container').text());
+    this.render();
   },
 
 
   render: function(){
-    
-
     // var el = this.$el,
     //   template = this.template;
 
@@ -45,15 +51,15 @@ ListView = Backbone.View.extend ({
     this.$el.append("<li>Goodbye</li>");
     this.$el.append(this.template({value : "Hello Backbone"}));
     //
-    // wines.each(function(wine){
-    //     el.append(template( wine.toJSON()));
-    // });
+//     // wines.each(function(wine){
+//     //     el.append(template( wine.toJSON()));
+//     // });
     return this;
   }
 
-
+//
 });
-
+//
 HomeView = Backbone.View.extend ({
 
   el: 'body',
@@ -78,7 +84,7 @@ HomeView = Backbone.View.extend ({
 
 wineApp = new HomeView();
 
-
+wineApp.render();
 
 
 

@@ -8,109 +8,34 @@
 </head>
 <body>
 
-<!--   <div class="mainlogo">
-  <img src="http://media.coindesk.com/2014/08/starbucks_logo.png" alt="MD Logo" />
-</div>
-<div class="headcontainer">
-<p>Welcome to Starbucks, hope you're having a good day :)</p>
-<p> Would you like a cup of coffee or a pastry?</p>
 
-<form id="new-search">
-    <input id="searchterm" name="searchterm" type="text"/>
-    <button> Submit </button>
 
-</form> -->
-<ul>
-<li></li>
-</ul>
-  <!-- MICROPHONE -->
+<div class="app-container"></div>
 
-  <!-- <div style="text-align: center;">
-  <center><div id="microphone"></div></center>
-  <pre id="result"></pre>
-  <div id="info"></div>
-  <div id="error"></div>
-  </div> -->
 
-  <!-- </div> -->
 
-<!--Template-->
 
-<!-- <script type ="text/template" id="results-template">
-  <span class="term"><%= term %>:</span>
-</script> -->
+<script id= "blogTemplate" type="text/template">
 
-<script type="text/template" id="item-container">
-    <li><%= value %></li>
+  <form class="blogform">
+    <input class="title" type="text" placeholder="enter blog title" > <br>
+    <textarea class="text" name="myTextBox" cols="50" rows="10"> </textarea>
+    <button name="button">Post</button>
+  </form>
+
 </script>
+
+
+
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
-  <script src="scripts/maintwo.js"></script>
+  <script src="scripts/mainfour.js"></script>
   <script src="microphone/microphone.min.js"></script> <!-- MICROPHONE -->
 
 
-
-
-  <!-- MICROPHONE -->
-  <!-- <script>
-  var mic = new Wit.Microphone(document.getElementById("microphone"));
-  var info = function (msg) {
-    document.getElementById("info").innerHTML = msg;
-  };
-  var error = function (msg) {
-    document.getElementById("error").innerHTML = msg;
-  };
-  mic.onready = function () {
-    info("Microphone is ready to record");
-  };
-  mic.onaudiostart = function () {
-    info("Recording started");
-    error("");
-  };
-  mic.onaudioend = function () {
-    info("Recording stopped, processing started");
-  };
-  mic.onresult = function (intent, entities) {
-    var r = kv("intent", intent);
-
-    for (var k in entities) {
-      var e = entities[k];
-
-      if (!(e instanceof Array)) {
-        r += kv(k, e.value);
-      } else {
-        for (var i = 0; i < e.length; i++) {
-          r += kv(k, e[i].value);
-        }
-      }
-    }
-
-    document.getElementById("result").innerHTML = r;
-  };
-  mic.onerror = function (err) {
-    error("Error: " + err);
-  };
-  mic.onconnecting = function () {
-    info("Microphone is connecting");
-  };
-  mic.ondisconnected = function () {
-    info("Microphone is not connected");
-  };
-
-  mic.connect("IMVKXH6QC47T6MB2D7FWRRADEDVXHKE5");
-  // mic.start();
-  // mic.stop();
-
-  function kv (k, v) {
-    if (toString.call(v) !== "[object String]") {
-      v = JSON.stringify(v);
-    }
-    return k + "=" + v + "\n";
-  }
-  </script> -->
 
 
 
@@ -121,3 +46,111 @@
 
 </body>
 </html>
+
+
+
+
+<!-- <script id="personTemplate" type="text/template">
+<%= name %> (<%= age %>) - <%= occupation %>
+</script>
+
+<script type="text/template" id="item-container">
+<li><%= value %></li>
+</script>
+-->
+
+
+
+
+<!--   <div class="mainlogo">
+<img src="http://media.coindesk.com/2014/08/starbucks_logo.png" alt="MD Logo" />
+</div>
+<div class="headcontainer">
+<p>Welcome to Starbucks, hope you're having a good day :)</p>
+<p> Would you like a cup of coffee or a pastry?</p>
+
+<form id="new-search">
+<input id="searchterm" name="searchterm" type="text"/>
+<button> Submit </button>
+
+</form> -->
+<!-- MICROPHONE -->
+
+<!-- <div style="text-align: center;">
+<center><div id="microphone"></div></center>
+<pre id="result"></pre>
+<div id="info"></div>
+<div id="error"></div>
+</div> -->
+
+<!-- </div> -->
+
+<!--Template-->
+
+<!-- <script type ="text/template" id="results-template">
+<span class="term"><%= term %>:</span>
+</script> -->
+
+<!-- <script type="text/template" id="item-container">
+<li><%= value %></li>
+</script>
+-->
+
+
+<!-- MICROPHONE -->
+<!-- <script>
+var mic = new Wit.Microphone(document.getElementById("microphone"));
+var info = function (msg) {
+document.getElementById("info").innerHTML = msg;
+};
+var error = function (msg) {
+document.getElementById("error").innerHTML = msg;
+};
+mic.onready = function () {
+info("Microphone is ready to record");
+};
+mic.onaudiostart = function () {
+info("Recording started");
+error("");
+};
+mic.onaudioend = function () {
+info("Recording stopped, processing started");
+};
+mic.onresult = function (intent, entities) {
+var r = kv("intent", intent);
+
+for (var k in entities) {
+var e = entities[k];
+
+if (!(e instanceof Array)) {
+r += kv(k, e.value);
+} else {
+for (var i = 0; i < e.length; i++) {
+r += kv(k, e[i].value);
+}
+}
+}
+
+document.getElementById("result").innerHTML = r;
+};
+mic.onerror = function (err) {
+error("Error: " + err);
+};
+mic.onconnecting = function () {
+info("Microphone is connecting");
+};
+mic.ondisconnected = function () {
+info("Microphone is not connected");
+};
+
+mic.connect("IMVKXH6QC47T6MB2D7FWRRADEDVXHKE5");
+// mic.start();
+// mic.stop();
+
+function kv (k, v) {
+if (toString.call(v) !== "[object String]") {
+v = JSON.stringify(v);
+}
+return k + "=" + v + "\n";
+}
+</script> -->
